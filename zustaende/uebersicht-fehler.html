@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fehler beim Laden</title>
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/berichtshefte.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" class="position-absolute" aria-hidden="true">
+      <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5l9-8 9 8M5.5 9.5V21h5v-6h3v6h5V9.5" /></symbol>
+    </svg>
+
+    <header class="kopfzeile">
+      <h1>Berichtshefte</h1>
+    </header>
+
+    <main class="container py-4">
+      <div class="text-center border rounded-3 py-5 px-3 leer-box" role="alert">
+        <h2 class="h5 mb-2">Berichtshefte konnten nicht geladen werden.</h2>
+        <p class="mb-4">Bitte überprüfe deine Verbindung und versuche es erneut.</p>
+        <a href="../index.html" class="btn btn-dark">Erneut versuchen</a>
+      </div>
+    </main>
+
+    <nav class="home-leiste fixed-bottom" aria-label="Hauptnavigation">
+      <a href="../index.html">
+        <svg class="home-icon" width="24" height="24" aria-hidden="true"><use href="#icon-home" /></svg>
+        Home
+      </a>
+    </nav>
+  </body>
+</html>

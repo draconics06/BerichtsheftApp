@@ -1,0 +1,304 @@
+:root {
+  --hintergrund: #f4f6f8;
+  --flaeche: #fff;
+  --flaeche-abgesetzt: #edf2f5;
+  --text: #263445;
+  --text-zart: #657487;
+  --rand: #dce3e9;
+  --akzent: #3658a6;
+  --akzent-hell: #edf2fb;
+  --signiert: #28785f;
+  --hochgeladen: #a56a13;
+  --fehlt: #a54848;
+}
+
+body {
+  background: var(--hintergrund);
+  color: var(--text);
+  padding-bottom: 4.5rem;
+}
+
+.kopfzeile {
+  background: var(--flaeche);
+  border-bottom: 1px solid var(--rand);
+  padding: 3.5rem 1rem 1rem;
+}
+.kopfzeile h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.kw-zeile {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-bottom: 0.65rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--rand);
+  border-left: 4px solid var(--status-farbe, var(--rand));
+  border-radius: 0.75rem;
+  background: var(--status-flaeche, var(--flaeche));
+  transition: border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+}
+.kw-zeile:has(.status-icon[aria-label="signiert"]) {
+  --status-farbe: var(--signiert);
+  --status-flaeche: #f0f7f3;
+}
+.kw-zeile:has(.status-icon[aria-label="hochgeladen"]) {
+  --status-farbe: var(--hochgeladen);
+  --status-flaeche: #fbf6ed;
+}
+.kw-zeile:has(.status-icon[aria-label="fehlt"]) {
+  --status-farbe: var(--fehlt);
+  --status-flaeche: #faf1f1;
+}
+.kw-zeile:has(.btn-kw:hover) {
+  border-color: var(--status-farbe);
+  box-shadow: 0 3px 10px rgba(38, 52, 69, 0.08);
+  transform: translateY(-1px);
+}
+.kw-zeile:focus-within {
+  outline: 3px solid rgba(54, 88, 166, 0.3);
+  outline-offset: 2px;
+}
+.btn-kw {
+  flex-grow: 1;
+  padding: 0.65rem 0.35rem;
+  background: transparent;
+  color: var(--text);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: 550;
+  text-align: left;
+}
+.btn-kw:hover {
+  background: transparent;
+  color: var(--text);
+}
+.btn-kw:focus-visible {
+  background: transparent;
+  color: var(--text);
+  outline: 0;
+}
+
+.status-icon {
+  flex-shrink: 0;
+  color: var(--text-zart);
+}
+.status-icon[aria-label="signiert"] {
+  color: var(--signiert);
+}
+.status-icon[aria-label="hochgeladen"] {
+  color: var(--hochgeladen);
+}
+.status-icon[aria-label="fehlt"] {
+  color: var(--fehlt);
+}
+.status-icon-gross {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.detail-pane {
+  background: var(--flaeche-abgesetzt);
+}
+.detail-karte {
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+  border-left: 4px solid var(--status-farbe, var(--rand));
+  border-radius: 0.9rem;
+  box-shadow: 0 8px 24px rgba(38, 52, 69, 0.07);
+}
+.detail-karte:has(.status-icon[aria-label="signiert"]) {
+  --status-farbe: var(--signiert);
+  background: #f0f7f3;
+}
+.detail-karte:has(.status-icon[aria-label="hochgeladen"]) {
+  --status-farbe: var(--hochgeladen);
+  background: #fbf6ed;
+}
+.detail-karte:has(.status-icon[aria-label="fehlt"]) {
+  --status-farbe: var(--fehlt);
+  background: #faf1f1;
+}
+.detail-karte .card-body {
+  padding: 1.5rem;
+}
+.detail-karte h2,
+.detail-inhalt h2 {
+  color: var(--text);
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+.detail-karte p,
+.detail-inhalt p {
+  color: var(--text-zart);
+}
+.detail-zeile dt {
+  color: var(--text-zart);
+  font-weight: 500;
+}
+.detail-zeile dd {
+  color: var(--text);
+  font-weight: 550;
+}
+.detail-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.detail-zeile dd {
+  margin: 0;
+}
+
+.skeleton-zeile {
+  height: 2.4rem;
+  flex: 1;
+  min-width: 0;
+}
+.skeleton-icon {
+  width: 1.9rem;
+  height: 1.9rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.leer-box {
+  background: var(--flaeche);
+  border-color: var(--rand) !important;
+  border-radius: 0.9rem;
+  box-shadow: 0 8px 24px rgba(38, 52, 69, 0.05);
+}
+.leer-box .h5 {
+  color: var(--text);
+}
+.leer-box p:not(.h5) {
+  color: var(--text-zart);
+}
+.btn-dark {
+  --bs-btn-bg: var(--akzent);
+  --bs-btn-border-color: var(--akzent);
+  --bs-btn-hover-bg: #2d4b8e;
+  --bs-btn-hover-border-color: #2d4b8e;
+  --bs-btn-active-bg: #263f79;
+  --bs-btn-active-border-color: #263f79;
+  border-radius: 0.65rem;
+}
+
+.home-leiste {
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 1px solid var(--rand);
+  text-align: center;
+  padding: 0.9rem 0;
+}
+.home-leiste a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.65rem;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 0.6rem;
+  transition: background-color 140ms ease, transform 140ms ease;
+}
+.home-leiste a:hover {
+  color: var(--text);
+  background: var(--hintergrund);
+  transform: translateY(-1px);
+}
+.home-leiste a:active {
+  transform: translateY(0);
+}
+.home-icon {
+  vertical-align: middle;
+}
+
+@media (min-width: 992px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+  .kopfzeile,
+  .home-leiste {
+    flex-shrink: 0;
+  }
+  .home-leiste.fixed-bottom {
+    position: static;
+  }
+
+  main {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+  }
+  main > .row {
+    flex: 1;
+    flex-wrap: nowrap;
+    min-height: 0;
+  }
+
+  main > .row > .col-lg-7 {
+    overflow-y: auto;
+  }
+  .detail-pane {
+    border-left: 1px solid var(--rand);
+    overflow-y: auto;
+  }
+
+  body:has(#kw1:target) .kw-zeile:nth-child(1),
+  body:has(#kw2:target) .kw-zeile:nth-child(2),
+  body:has(#kw3:target) .kw-zeile:nth-child(3),
+  body:has(#kw4:target) .kw-zeile:nth-child(4),
+  body:has(#kw5:target) .kw-zeile:nth-child(5),
+  body:has(#kw6:target) .kw-zeile:nth-child(6),
+  body:has(#kw7:target) .kw-zeile:nth-child(7),
+  body:has(#kw8:target) .kw-zeile:nth-child(8),
+  body:has(#kw9:target) .kw-zeile:nth-child(9),
+  body:has(#kw10:target) .kw-zeile:nth-child(10),
+  body:has(#kw11:target) .kw-zeile:nth-child(11),
+  body:has(#kw12:target) .kw-zeile:nth-child(12),
+  body:has(#kw13:target) .kw-zeile:nth-child(13),
+  body:has(#kw14:target) .kw-zeile:nth-child(14) {
+    border-color: var(--akzent);
+    box-shadow: 0 0 0 2px rgba(54, 88, 166, 0.18);
+  }
+
+  .kopfzeile {
+    padding-top: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(38, 52, 69, 0.03);
+  }
+  .kopfzeile h1 {
+    font-size: 2.6rem;
+  }
+
+  /* Detailblöcke wechseln per :target; KW1 ist der Standard. */
+  .detail-inhalt {
+    display: none;
+    scroll-margin-top: 30rem;
+  }
+  .detail-inhalt:target,
+  .detail-inhalt.standard {
+    display: block;
+  }
+  .detail-pane:has(:target) .detail-inhalt.standard:not(:target) {
+    display: none;
+  }
+
+  .detail-zeile dt {
+    flex: 0 0 100%;
+  }
+  .detail-zeile dd {
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
+}

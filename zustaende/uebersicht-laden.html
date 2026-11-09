@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Berichtshefte werden geladen …</title>
+    <link rel="stylesheet" href="../vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/berichtshefte.css" />
+  </head>
+  <body>
+    <svg width="0" height="0" class="position-absolute" aria-hidden="true">
+      <symbol id="icon-signiert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M7.5 12.5l3 3 6-7" /></symbol>
+      <symbol id="icon-hochgeladen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18h-.5a4.5 4.5 0 0 1-.4-8.98A6 6 0 0 1 17.7 8.6 4.5 4.5 0 0 1 17.5 18H17" /><path d="M12 20v-9M9 14l3-3 3 3" /></symbol>
+      <symbol id="icon-fehlt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" /></symbol>
+      <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5l9-8 9 8M5.5 9.5V21h5v-6h3v6h5V9.5" /></symbol>
+    </svg>
+
+    <header class="kopfzeile">
+      <h1>Berichtshefte</h1>
+    </header>
+
+    <main class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col-12 col-lg-7 p-3">
+          <div class="d-flex align-items-center gap-2 mb-3" role="status">
+            <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+            <span>Berichtshefte werden geladen …</span>
+          </div>
+
+          <ul class="list-unstyled placeholder-glow p-0 mb-0" aria-hidden="true">
+            <li class="kw-zeile">
+              <span class="placeholder skeleton-zeile"></span>
+              <span class="placeholder skeleton-icon"></span>
+            </li>
+            <li class="kw-zeile">
+              <span class="placeholder skeleton-zeile"></span>
+              <span class="placeholder skeleton-icon"></span>
+            </li>
+            <li class="kw-zeile">
+              <span class="placeholder skeleton-zeile"></span>
+              <span class="placeholder skeleton-icon"></span>
+            </li>
+            <li class="kw-zeile">
+              <span class="placeholder skeleton-zeile"></span>
+              <span class="placeholder skeleton-icon"></span>
+            </li>
+            <li class="kw-zeile">
+              <span class="placeholder skeleton-zeile"></span>
+              <span class="placeholder skeleton-icon"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <nav class="home-leiste fixed-bottom" aria-label="Hauptnavigation">
+      <a href="../index.html">
+        <svg class="home-icon" width="24" height="24" aria-hidden="true"><use href="#icon-home" /></svg>
+        Home
+      </a>
+    </nav>
+  </body>
+</html>
